@@ -4,6 +4,7 @@ from PIL import ImageTk, Image
 from tkinter import messagebox
 a = Tk()
 a.geometry('1100x700')
+a.resizable(0,0)
 c = Canvas(a, height=1100, width = 700)
 bgimage = PhotoImage(file='logo1.png')
 background_label = Label(a, image=bgimage)
