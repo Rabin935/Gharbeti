@@ -12,6 +12,11 @@ c.pack()
 
 
 
+
+
+
+
+
 sign_up = Label(a, text="Sign Up", font=("Arial Bold", 50),
                 bg = "#86A4BF")
 sign_up.place(x = 0, y = 5)
