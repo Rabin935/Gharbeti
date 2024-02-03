@@ -19,7 +19,7 @@ def home():
         messagebox.showerror("Error","Please input valid details.")
 def signup():
     a.destroy()
-    import loginpage    
+    import Signuppage    
 l=Label(a,text="Enter your details",font=("Arial Bold",28)).place(x=830,y=150)
 l1=Label(a,text="Id no :",font=("Arial Bold",16)).place(x=825,y=220)
 e1=Entry(a,width=20,font=("Arial Bold",14)).place(x=950,y=220)
