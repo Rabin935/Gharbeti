@@ -11,13 +11,9 @@ background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
 
 
-
-
 sign_up = Label(a, text="Sign Up", font=("Arial Bold", 50),
                 bg = "#86A4BF")
 sign_up.place(x = 0, y = 5)
-
-
 
 
 fn = Label(a, text="Full name", font= ("Arial Bold", 20),
