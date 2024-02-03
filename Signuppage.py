@@ -9,13 +9,28 @@ bgimage = PhotoImage(file='C:/Users/Dell/Desktop/files/gharbeti/logo1.png')
 background_label = Label(a, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
-
+global flag
+def check():
+    flag=0
+    if len((ps1.get()))<8:
+        flag+=1
+        messagebox.showwarning("error","Error in password")
+        if bool((em1.get().endswith("@gmail.com")))==False:
+            flag+=1
+            messagebox.showwarning("error","Error in email")
+            if bool((ph1.get()).isdigit)==False or len((ph1.get()))<10:
+                flag+=1
+                messagebox.showwarning("error","Error in phone number")
+    if flag>=1:
+        messagebox.showerror("error","error in details")
+    else:
+        messagebox.showinfo("SUCCESS","Account created successfully.")
+        a.destroy()
+        import home              
 
 sign_up = Label(a, text="Sign Up", font=("Arial Bold", 50),
                 bg = "#86A4BF")
 sign_up.place(x = 0, y = 5)
-
-
 
 
 fn = Label(a, text="Full name", font= ("Arial Bold", 20),
@@ -45,19 +60,17 @@ ph1 = Entry(a, width=35)
 ph1.place(x = 700, y = 340, height=30)
 
 c1=IntVar()
-c2=IntVar()
-c3=IntVar()
-gn1 = Checkbutton(a, text = 'Female',variable=c1,
-                  bg= '#86A4BF')
+gn1 = Radiobutton(a, text = 'Female',variable=c1,
+                  bg= '#86A4BF',value=1)
 gn1.place(x = 700, y = 425)
-gn2 = Checkbutton(a, text = 'Male',variable=c2,
-                  bg="#86A4BF")
+gn2 = Radiobutton(a, text = 'Male',variable=c1,
+                  bg="#86A4BF",value=2)
 gn2.place(x = 770, y = 425)
-gn3 = Checkbutton(a, text = 'Others',variable=c3,
-                  bg="#86A4BF")
+gn3 = Radiobutton(a, text = 'Others',variable=c1,
+                  bg="#86A4BF",value=3)
 gn3.place(x = 840, y = 425)
 
-sign = Button(a, text="Sign up", font=("Arial Bold", 20))
+sign = Button(a, text="Sign up", font=("Arial Bold", 20),command=check)
 sign.place(x = 700, y = 480)
 
 acc = Label(a, text="Already have an account?",
