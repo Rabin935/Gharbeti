@@ -10,19 +10,21 @@ bgimage = PhotoImage(file='C:/Users/Dell/Desktop/files/gharbeti/logo1.png')
 background_label = Label(a, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
-
-
-
-# a.iconbitmap("a.ico")
+a.iconbitmap("a.ico")
 def home():
     k=e1.get()
     p=e2.get()
     if k.isdigit() and len(p)>8:
-        # a.destroy()
-        # import home
         messagebox.showinfo("success","logged in successfully.")
+        a.destroy()
+        import home
     else:
         messagebox.showerror("error","invalid details")
+def add():
+    if chk.get()==1:
+        e2.config(show="")
+    else:
+        e2.config(show='*')
 def signup():
     a.destroy()
     import Signuppage    
@@ -46,8 +48,8 @@ e2.place(x=805,y=290, height=30)
 
 chk=IntVar()
 Checkbutton(a,variable=chk,
-            bg = "#86A4BF").place(x=830,y=400)
-Label(a,text="Remember me",font=("Arial Bold",12), bg = "#86A4BF").place(x=850,y=400)
+            bg = "#86A4BF",command=add).place(x=830,y=330)
+Label(a,text="Show password",font=("Arial Bold",12), bg = "#86A4BF").place(x=850,y=330)
 
 b1=Button(text='Login',font=("Arial Bold",16),command=home).place(x=860,y=450)
 
