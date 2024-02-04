@@ -10,7 +10,7 @@ bgimage = PhotoImage(file='C:/Users/Dell/Desktop/files/G/Gharbeti/logo1.png')
 background_label = Label(a, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
-# a.iconbitmap("a.ico")
+a.iconbitmap("C:/Users/Dell/Desktop/files/G/Gharbeti/a.ico")
 def home():
     k=e1.get()
     p=e2.get()

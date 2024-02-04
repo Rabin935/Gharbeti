@@ -4,6 +4,7 @@ from PIL import ImageTk, Image
 from tkinter import messagebox
 a = Tk()
 a.geometry('1100x700')
+a.iconbitmap("C:/Users/Dell/Desktop/files/G/Gharbeti/a.ico")
 c = Canvas(a, height=1100, width = 700)
 bgimage = PhotoImage(file='C:/Users/Dell/Desktop/files/G/Gharbeti/logo1.png')
 background_label = Label(a, image=bgimage)
