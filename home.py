@@ -10,6 +10,7 @@ bgimage = PhotoImage(file='C:/Users/Dell/Desktop/files/gharbeti/logo1.png')
 background_label = Label(a, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
+Label(a,text="Gharbeti app",font=("Arial Bold",20))
 a.iconbitmap("a.ico")
 
 
