@@ -4,15 +4,12 @@ from PIL import ImageTk, Image
 from tkinter import messagebox
 a = Tk()
 a.geometry('1100x700')
-
 a.iconbitmap("a.ico")
-
 c = Canvas(a, height=1100, width = 700)
 bgimage = PhotoImage(file='logo1.png')
 background_label = Label(a, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
-
 global flag
 def check():
     flag=0
@@ -31,20 +28,12 @@ def check():
         messagebox.showinfo("SUCCESS","Account created successfully.")
         a.destroy()
         import home              
-
 def signup():
     a.destroy()
     import gblogin
-
-
-
 sign_up = Label(a, text="Sign Up", font=("Arial Bold", 50),
                 bg = "#86A4BF")
 sign_up.place(x = 0, y = 5)
-
-
-
-
 fn = Label(a, text="Full name", font= ("Arial Bold", 20),
            bg = '#C0C9D1')
 fn.place(x = 650, y = 100)
@@ -68,7 +57,6 @@ em1 = Entry(a, width=35)
 em1.place(x = 805, y = 260, height=30)
 ph1 = Entry(a, width=35)
 ph1.place(x = 805, y = 340, height=30)
-
 c1=IntVar()
 c2=IntVar()
 c3=IntVar()
@@ -87,11 +75,9 @@ gn3 = Checkbutton(a, text = 'Others',variable=c3,
 gn3 = Radiobutton(a, text = 'Others',variable=c1,
                   bg="#C0C9D1",value=3)
 gn3.place(x = 945, y = 425)
-
 sign = Button(a, text="Sign up", font=("Arial Bold", 20))
 sign = Button(a, text="Sign up", font=("Arial Bold", 20),command=check)
 sign.place(x = 820, y = 475)
-
 acc = Label(a, text="Already have an account?",
             font = ("Arial Bold", 8),
             bg = "#C0C9D1")
