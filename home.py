@@ -10,7 +10,7 @@ bgimage = PhotoImage(file='logo1.png')
 background_label = Label(a, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
-a.iconbitmap("a.ico")
+# a.iconbitmap("a.ico")
 
 
 a.mainloop()
