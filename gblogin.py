@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 from PIL import ImageTk,Image
 a=Tk()
-a.title("GHARBETI")
+a.title("GHARBETI") 
 a.geometry("1100x700")
 a.resizable(0,0)
 c = Canvas(a, height=1100, width = 700)
@@ -28,9 +28,9 @@ def add():
 def signup():
     a.destroy()
     import Signuppage    
-l=Label(a,text="Enter your details",font=("Arial Bold", 28), 
+l=Label(a,text="Sign In",font=("Arial Bold", 28), 
         bg = "#C0C9D1")
-l.place(x=690,y=100)
+l.place(x=775,y=100)
 l1=Label(a,text="Id no :",font=("Arial Bold",20),
          bg = "#C0C9D1")
 l1.place(x=650,y=220)
