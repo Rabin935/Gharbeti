@@ -3,7 +3,7 @@ from tkinter import messagebox
 from PIL import ImageTk,Image
 a=Tk()
 a.title("GHARBETI") 
-a.geometry("1100x700")
+a.geometry("1000x600")
 a.resizable(0,0)
 c = Canvas(a, height=1100, width = 700)
 bgimage = PhotoImage(file='C:/Users/Dell/Desktop/files/G/Gharbeti/logo1.png')
@@ -12,8 +12,8 @@ background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
 a.iconbitmap("C:/Users/Dell/Desktop/files/G/Gharbeti/a.ico")
 def home():
-    k=e1.get()
-    p=e2.get()
+    k=id_no.get()
+    p=password.get()
     if k.isdigit() and len(p)>8:
         messagebox.showinfo("success","logged in successfully.")
         a.destroy()
@@ -22,34 +22,85 @@ def home():
         messagebox.showerror("error","invalid details")
 def add():
     if chk.get()==1:
-        e2.config(show="")
+        password.config(show="")
     else:
-        e2.config(show='*')
+        password.config(show='*')
 def signup():
     a.destroy()
-    import Signuppage    
-l=Label(a,text="Sign In",font=("Arial Bold", 28), 
-        bg = "#C0C9D1")
-l.place(x=775,y=100)
-l1=Label(a,text="Id no :",font=("Arial Bold",20),
-         bg = "#C0C9D1")
-l1.place(x=650,y=220)
-e1=Entry(a,width=20,font=("Arial Bold",14))
-e1.place(x=805,y=220, height=30)
-l2=Label(a,text="Password :",font=("Arial Bold",20),
-         bg = "#C0C9D1")
-l2.place(x=650,y=290)
-e2=Entry(a,width=20,font=("Arial Bold",14))
-e2.place(x=805,y=290, height=30)
+    import Signuppage   
+
+
+frame = Frame(a, width= '400', height='500', bg= '#F0F4F7') 
+frame.place(x = 560, y = 50)
+l=Label(a,text="Sign In",font=("Calibri", 28), 
+        bg = "#F0F4F7")
+l.place(x=690,y=100)
+
+def on_enter(e):
+    id_no.delete(0, 'end')
+    
+def on_leave(e):
+    name = id_no.get()
+    if name == '':
+        id_no.insert(0, 'Username')
+    
+id_no=Entry(a,width=32,
+         font=("Calibri",11),
+         fg = 'black',
+         bg = '#F0F4F7',
+         border=0)
+id_no.place(x=600,y=220, height=30)
+id_no.insert(0, 'Username')
+id_no.bind('<FocusIn>', on_enter)
+id_no.bind('<FocusOut>', on_leave)
+
+Frame(a, width=300,bg = 'black').place(x = 600, y = 250)
+
+def on_enter(e):
+    password.delete(0, 'end')
+    
+def on_leave(e):
+    name = password.get()
+    if name == '':
+        password.insert(0, 'Password')
+    
+password=Entry(a,width=32,
+         font=("Calibri",11),
+         fg = 'black',
+         bg = '#F0F4F7',
+         border=0)
+password.place(x=600,y=280, height=30)
+password.insert(0, 'Password')
+password.bind('<FocusIn>', on_enter)
+password.bind('<FocusOut>', on_leave)
+
+Frame(a, width=300,bg = 'black').place(x = 600, y = 310)
 chk=IntVar()
 Checkbutton(a,variable=chk,
-            bg = "#C0C9D1",command=add).place(x=830,y=330)
-Label(a,text="Show password",font=("Arial Bold",12), bg = "#C0C9D1").place(x=850,y=330)
-b1=Button(text='Login',font=("Arial Bold",16),command=home).place(x=860,y=380)
-b2=Button(text="Forgot password",font=("Arial Bold",8)).place(x=860,y=425)
+            bg = "#F0F4F7",command=add).place(x= 715,y=330)
+Label(a,text="Show password",font=("Calibri",12), bg = "#F0F4F7").place(x=735,y=330)
+sign_in=Button(a, text='Sign in',
+               width=20,
+               font=("Arial Bold",16),
+               bg= "#82A6B4",
+               border=0,
+               fg='#F0F4F7',
+               command=home).place(x=640,y=380, height=40)
+forget=Button(text="Forgot password?",
+              font=("Calibri",11),
+              fg= 'blue',
+              cursor='hand2',
+              border=0,
+              bg= '#F0F4F7').place(x=794,y=425)
 Label(a,text="Don't have an account?",
-      font=("Arial Bold",10),
-      bg = "#C0C9D1").place(x=800,y=500)
-b3=Button(text="SIGN UP",font=("Arial Bold",8),command=signup)
-b3.place(x=960,y=500)
+      font=("Calibri",10),
+      bg = "#F0F4F7").place(x=650,y=468)
+sign_up=Button(a,text="SIGN UP",
+               font=("Calibri",11),
+               bg = '#F0F4F7',
+               fg='blue',
+               cursor='hand2',
+               border=0,
+               command=signup)
+sign_up.place(x=780,y=465)
 a.mainloop()
