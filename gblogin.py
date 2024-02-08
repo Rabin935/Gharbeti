@@ -30,9 +30,12 @@ def signup():
     import Signuppage   
 
 
-frame = Frame(a, width= '400', height='500', bg= '#F0F4F7') 
+frame = Frame(a, width= '400', height='500',
+              bg= '#F0F4F7') 
 frame.place(x = 560, y = 50)
-l=Label(a,text="Sign In",font=("Calibri", 28), 
+l=Label(a,text="Sign In",
+        font=("Calibri", 28), 
+        fg='#007EA3',
         bg = "#F0F4F7")
 l.place(x=690,y=100)
 
@@ -46,7 +49,7 @@ def on_leave(e):
     
 id_no=Entry(a,width=32,
          font=("Calibri",11),
-         fg = 'black',
+         fg = '#007EA3',
          bg = '#F0F4F7',
          border=0)
 id_no.place(x=600,y=220, height=30)
@@ -54,7 +57,7 @@ id_no.insert(0, 'Username')
 id_no.bind('<FocusIn>', on_enter)
 id_no.bind('<FocusOut>', on_leave)
 
-Frame(a, width=300,bg = 'black').place(x = 600, y = 250)
+Frame(a, width=300,bg = '#007EA3').place(x = 600, y = 250)
 
 def on_enter(e):
     password.delete(0, 'end')
@@ -66,7 +69,7 @@ def on_leave(e):
     
 password=Entry(a,width=32,
          font=("Calibri",11),
-         fg = 'black',
+         fg = '#007EA3',
          bg = '#F0F4F7',
          border=0)
 password.place(x=600,y=280, height=30)
@@ -74,11 +77,14 @@ password.insert(0, 'Password')
 password.bind('<FocusIn>', on_enter)
 password.bind('<FocusOut>', on_leave)
 
-Frame(a, width=300,bg = 'black').place(x = 600, y = 310)
+Frame(a, width=300,bg = '#007EA3').place(x = 600, y = 310)
 chk=IntVar()
 Checkbutton(a,variable=chk,
             bg = "#F0F4F7",command=add).place(x= 715,y=330)
-Label(a,text="Show password",font=("Calibri",12), bg = "#F0F4F7").place(x=735,y=330)
+Label(a,text="Show password",
+      font=("Calibri",12),
+      bg = "#F0F4F7",
+      fg='#007EA3').place(x=735,y=330)
 sign_in=Button(a, text='Sign in',
                width=20,
                font=("Arial Bold",16),
