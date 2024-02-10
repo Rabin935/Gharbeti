@@ -36,8 +36,8 @@ b2=Button(text="ADD A PROBLEM",font=("Calibri",14),command=aap)
 b2.place(x=470,y=50)
 b2=Button(text="MY ACCOUNT",font=("Calibri",14),command=myacc)
 b2.place(x=650,y=50)
-
-
+l=Label(a,text="this is add a problem",font=("Calibri",16))
+l.place(x=400,y=400)
 
 
 a.mainloop()
