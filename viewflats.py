@@ -39,6 +39,10 @@ b2.place(x=650,y=50)
 l=Label(a,text="this is view flats",font=("Calibri",16))
 l.place(x=400,y=400)
 
+#inserting a grid for record navigation
 
-
+# F=Frame(a,bg="cyan",width=700,height=700)
+# F.pack(side=BOTTOM)
+f = Frame(a, bg = "orange", width = 500, height = 500)
+f.place(x=430,y=300)
 a.mainloop()

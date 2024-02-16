@@ -11,6 +11,9 @@ background_label = Label(a, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
 a.iconbitmap("C:/Users/Dell/Desktop/files/G/Gharbeti/a.ico")
+
+
+#on hitting login:connecting to homepage 
 def home():
     k=id_no.get()
     p=password.get()
@@ -20,11 +23,15 @@ def home():
         import home
     else:
         messagebox.showerror("error","invalid details")
+
+#show or hide password option 
 def add():
     if chk.get()==1:
         password.config(show="")
     else:
         password.config(show='*')
+
+#on hitting signup button:connecting to signuppage
 def signup():
     a.destroy()
     import Signuppage   
@@ -33,6 +40,7 @@ def signup():
 frame = Frame(a, width= '400', height='500',
               bg= '#F0F4F7') 
 frame.place(x = 560, y = 50)
+
 l=Label(a,text="Sign In",
         font=("Calibri", 28), 
         fg='#007EA3',
@@ -78,6 +86,8 @@ password.bind('<FocusIn>', on_enter)
 password.bind('<FocusOut>', on_leave)
 
 Frame(a, width=300,bg = '#007EA3').place(x = 600, y = 310)
+
+#for checkbutton of show password 
 chk=IntVar()
 Checkbutton(a,variable=chk,
             bg = "#F0F4F7",command=add).place(x= 715,y=330)
@@ -85,6 +95,8 @@ Label(a,text="Show password",
       font=("Calibri",12),
       bg = "#F0F4F7",
       fg='#007EA3').place(x=735,y=330)
+
+#for signin button
 sign_in=Button(a, text='Sign in',
                width=20,
                font=("Arial Bold",16),
