@@ -76,7 +76,7 @@ problem_buuton=Button(a, text="Add a problem",
 problem_buuton.place(x=650,y=50)
 Frame(a, width=215,height=2, bg = '#007EA3').place(x = 657, y = 103)
 
-account_button=Button(a, text="My profile",
+account_button=Button(a, text="My account",
                    font=("Calibri",26),
                    fg='#007EA3',
                    bg='#F0F4F7',
