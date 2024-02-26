@@ -9,13 +9,13 @@ a.geometry("700x900")
 a.resizable(0,0)
 a.config(bg='#F0F4F7')
 
-image = Image.open("img/myaccbgimg.png")
+# image = Image.open("img/myaccbgimg.png")
 
-img = ImageTk.PhotoImage(image)
-background_label = Label(a, image=img)
+# img = ImageTk.PhotoImage(image)
+# background_label = Label(a, image=img)
 
-label = Label(a, image=img)
-label.pack()
+# label = Label(a, image=img)
+# label.pack()
 
 # c = Canvas(a, height=1100, width = 700)
 # bgimage = PhotoImage(file='img/myaccbgimg.jpg')
@@ -39,7 +39,7 @@ label.pack()
 #     a.destroy()
 #     import myacc
 
-
+Frame(a, width=700, height=900, bg='#B53CFF').place(x = 0, y = 0)
 Frame(a, width=700, height=900, bg='#FFA800').place(x = 0, y = 290)
 Frame(a, width=150,height=150, bg='blue').place(x = 280, y = 170)
 
