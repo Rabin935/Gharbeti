@@ -1,48 +1,57 @@
 from tkinter import *
-from tkinter import messagebox
-from PIL import ImageTk,Image
-a=Tk()
-# a.iconbitmap("a.ico")
-a.title("GHARBETI")
-a.geometry("1100x700")
-a.resizable(0,0)
-c = Canvas(a, height=1100, width = 700)
-bgimage = PhotoImage(file='C:/Users/Dell/Desktop/files/G/Gharbeti/logo1.png')
-background_label = Label(a, image=bgimage)
-background_label.place(x=0, y=30, relwidth=1, relheight=1)
-c.pack()
+from data import dbtable
+#defining a class for apartment management system
+class apms:
+    def __init__(self,root):
+        self.root=root
+        self.root.title("Records of tenants")
+        self.root.geometry("1550x800+0+0")
+
+        #placing buttons to navigate through the 
+        global home
+        home=Button(root,text="Home",
+               font=("Calibri",26),
+               bg = '#F0F4F7',
+               fg='#007EA3',
+               cursor='hand2',
+               border=0,
+               command=home)
+        home.place(x=50,y=50)
+        Frame(root, width=88,height=2, bg = '#007EA3').place(x = 60, y = 103)
+
+        flat_button=Button(root, text="View flats",
+                        font=("Calibri",26),
+                        command=self.db_details,
+                        fg='#007EA3',
+                        bg='#F0F4F7',
+                        border=0,
+                        cursor='hand2')
+        flat_button.place(x=170,y=50)
+        Frame(root, width=153,height=2, bg = '#007EA3').place(x = 180, y = 103)
+        
+    #overlapping on the main window 
+    def db_details(self):
+        self.newwindow=Toplevel(self.root)
+        self.app=dbtable(self.newwindow)
+
+#function in commands onclikcing navigation buttons
 def home():
-    a.destroy()
+    root.destroy()
     import home
 def vflat():
-    a.destroy()
+    root.destroy()
     import viewflats
-def ant():
-    a.destroy()
-    import ant
-def aap():
-    a.destroy()
-    import aap
-def myacc():
-    a.destroy()
-    import myacc
-b1=Button(text="HOME",font=("Calibri",14),command=home)
-b1.place(x=50,y=50)
-b2=Button(text="VIEW FLATS",font=("Calibri",14),command=vflat)
-b2.place(x=150,y=50)
-b2=Button(text="ADD NEW TENANT",font=("Calibri",14),command=ant)
-b2.place(x=280,y=50)
-b2=Button(text="ADD A PROBLEM",font=("Calibri",14),command=aap)
-b2.place(x=470,y=50)
-b2=Button(text="MY ACCOUNT",font=("Calibri",14),command=myacc)
-b2.place(x=650,y=50)
-l=Label(a,text="this is view flats",font=("Calibri",16))
-l.place(x=400,y=400)
 
-#inserting a grid for record navigation
 
-# F=Frame(a,bg="cyan",width=700,height=700)
-# F.pack(side=BOTTOM)
-f = Frame(a, bg = "orange", width = 500, height = 500)
-f.place(x=430,y=300)
-a.mainloop()
+
+        
+
+
+        
+
+
+#calling the function 
+if __name__=="__main__":
+    root=Tk()
+    obj=apms(root)
+    root.mainloop()
