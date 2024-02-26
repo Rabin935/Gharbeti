@@ -31,7 +31,7 @@ def aap():
     a.destroy()
     import aap
 def myacc():
-    a.destroy()
+    # a.destroy()
     import myacc
 
 
@@ -60,24 +60,24 @@ flat_button=Button(a, text="View flats",
 flat_button.place(x=170,y=50)
 Frame(a, width=153,height=2, bg = '#007EA3').place(x = 180, y = 103)
 
-tenant_button=Button(a, text="Add new tenants",
-                   font=("Calibri",26),
-                   fg='#007EA3',
-                   bg='#F0F4F7',
-                   border=0,
-                   cursor='hand2',command=tenant)
-tenant_button.place(x=360,y=50)
-Frame(a, width=245,height=2, bg = '#007EA3').place(x = 367, y = 103)
+# tenant_button=Button(a, text="Add new tenants",
+#                    font=("Calibri",26),
+#                    fg='#007EA3',
+#                    bg='#F0F4F7',
+#                    border=0,
+#                    cursor='hand2',command=tenant)
+# tenant_button.place(x=360,y=50)
+# Frame(a, width=245,height=2, bg = '#007EA3').place(x = 367, y = 103)
 
-problem_buuton=Button(a, text="Add a problem",
-                   font=("Calibri",26),
-                   fg='#007EA3',
-                   bg='#F0F4F7',
-                   border=0,
-                   cursor='hand2',
-                   command=aap)
-problem_buuton.place(x=650,y=50)
-Frame(a, width=215,height=2, bg = '#007EA3').place(x = 657, y = 103)
+# problem_buuton=Button(a, text="Add a problem",
+#                    font=("Calibri",26),
+#                    fg='#007EA3',
+#                    bg='#F0F4F7',
+#                    border=0,
+#                    cursor='hand2',
+#                    command=aap)
+# problem_buuton.place(x=650,y=50)
+# Frame(a, width=215,height=2, bg = '#007EA3').place(x = 657, y = 103)
 
 account_button=Button(a, text="My profile",
                    font=("Calibri",26),
@@ -86,8 +86,8 @@ account_button=Button(a, text="My profile",
                    border=0,
                    cursor='hand2',
                    command=myacc)
-account_button.place(x=910,y=50)
-Frame(a, width=150,height=2, bg = '#007EA3').place(x = 920, y = 103)
+account_button.place(x=360,y=50)
+Frame(a, width=150,height=2, bg = '#007EA3').place(x = 368, y = 103)
 
 welcome = Label(a, text= 'Welcome to our Apartment',
                 font=('arial bold', 40),
