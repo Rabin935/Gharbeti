@@ -29,10 +29,31 @@ class apms:
         flat_button.place(x=170,y=50)
         Frame(root, width=153,height=2, bg = '#007EA3').place(x = 180, y = 103)
         
-    #overlapping on the main window 
+        flat_button=Button(root, text="Rooms",
+                        font=("Calibri",20),
+                        command=self.db_details,
+                        fg='#007EA3',
+                        bg='#F0F4F7',
+                        border=0,
+                        cursor='hand2')
+        flat_button.place(x=50,y=150)
+        Frame(root, width=153,height=2, bg = '#007EA3').place(x = 180, y = 103)
+        
+        flat_button=Button(root, text="Tenants",
+                        font=("Calibri",20),
+                        command=self.db_details,
+                        fg='#007EA3',
+                        bg='#F0F4F7',
+                        border=0,
+                        cursor='hand2')
+        flat_button.place(x=50,y=200)
+        Frame(root, width=153,height=2, bg = '#007EA3').place(x = 180, y = 103)
+        
+    #overlapping on the main window 3)
     def db_details(self):
         self.newwindow=Toplevel(self.root)
         self.app=dbtable(self.newwindow)
+
 
 #function in commands onclikcing navigation buttons
 def home():
