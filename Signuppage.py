@@ -3,6 +3,7 @@ from tkinter import PhotoImage
 from PIL import Image, ImageTk
 from tkinter import messagebox
 a = Tk()
+a.title("GHARBETI - Signup")
 a.geometry('1000x600')
 a.resizable(0,0)
 
@@ -30,8 +31,8 @@ def check():
         messagebox.showerror("error","error in details")
     else:
         messagebox.showinfo("SUCCESS","Account created successfully.")
-        a.destroy()
-        import home              
+        # a.destroy()
+        import forgetps              
 def signup():
     a.destroy()
     import gblogin
