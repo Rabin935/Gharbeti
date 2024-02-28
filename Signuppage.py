@@ -2,10 +2,26 @@ from tkinter import *
 from tkinter import PhotoImage
 from PIL import Image, ImageTk
 from tkinter import messagebox
+import sqlite3
+
 a = Tk()
 a.title("GHARBETI - Signup")
 a.geometry('1000x600')
 a.resizable(0,0)
+#connecting to the database
+conn=sqlite3.connect("tenants.db")
+cursor=conn.cursor()
+cursor.execute("""CREATE TABLE IF NOT EXISTS tenant(
+        ID INTEGER PRIMARY KEY AUTOINCREMENT,
+        fname   TEXT,
+        pw     TEXT,
+        em     TEXT,
+        co     INT,
+        a1     TEXT,
+        a2     TEXT,
+        a3     TEXT 
+)""")
+conn.commit()
 
 a.iconbitmap("C:/Users/Dell/Desktop/files/G/Gharbeti/a.ico")
 
@@ -31,12 +47,39 @@ def check():
         messagebox.showerror("error","error in details")
     else:
         messagebox.showinfo("SUCCESS","Account created successfully.")
-        # a.destroy()
-        import forgetps              
+        v1=fullname.get()
+        v2=password1.get()
+        v3=email.get()
+        v4=phone_no.get()
+        a.destroy()
+        import forgetps
+        conn=sqlite3.connect("tenants.db")
+        c=conn.cursor()
+        c.execute("INSERT INTO tenant(fname,pw,em,co,a1,a2,a3) VALUES(?,?,?,?,?,?,?)",
+        (v1,v2,v3,v4,forgetps.ans1.get(),forgetps.ans2.get(),forgetps.ans3.get()))
+        conn.commit()
+        conn.close()
+        fullname.delete(0,END)
+        password1.delete(0,END)
+        email.delete(0,END)
+        phone_no.delete(0,END)
+        a.destroy()
+        import home
+        
+      
+      
+
+
 def signup():
-    a.destroy()
     import gblogin
+    a.destroy
     
+
+global fullname
+global password1
+global email
+global phone_no
+
 
 frame = Frame(a, width= '400', height='500', bg= '#F0F4F7') 
 frame.place(x = 560, y = 50)
@@ -59,6 +102,9 @@ def on_leave(e):
     name = fullname.get()
     if name == '':
         fullname.insert(0, 'Enter your Full name')
+
+
+
 
 fullname=Entry(a,width=32,
          font=("Calibri",11),
@@ -184,5 +230,6 @@ log_in=Button(a,text="LOG IN",
                border=0,
                command=signup)
 log_in.place(x=800,y=430)
+
 
 a.mainloop()

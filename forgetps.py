@@ -1,24 +1,27 @@
 from tkinter import *
-
+import sqlite3
 a = Tk()
 a.title("GHARBETI") 
 a.geometry('450x600')
 a.resizable(0,0)
-
+conn=sqlite3.connect("tenants.db")
+cursor=conn.cursor()
+cursor.execute("""CREATE TABLE IF NOT EXISTS tenant(
+        ID INTEGER PRIMARY KEY AUTOINCREMENT,
+        fname   TEXT,
+        pw     TEXT,
+        em     TEXT,
+        co     INT,
+        a1     TEXT,
+        a2     TEXT,
+        a3     TEXT 
+)""")
+conn.commit()
 
 def confirm():
-    a.destroy()
-    import home
+        a.destroy()
+        import home
     
-
-
-
-
-
-
-
-
-
 
 #frame for reset security question
 Frame(a, width=600,height=100, bg = '#007EA3').place(x = 0, y = 0)
