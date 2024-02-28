@@ -14,12 +14,6 @@ def confirm():
 
 
 
-
-
-
-
-
-
 #frame for reset security question
 Frame(a, width=600,height=100, bg = '#007EA3').place(x = 0, y = 0)
 

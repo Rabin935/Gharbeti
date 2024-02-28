@@ -39,27 +39,33 @@ a.config(bg='#F0F4F7')
 #     a.destroy()
 #     import myacc
 
-Frame(a, width=700, height=900, bg='#B53CFF').place(x = 0, y = 0)
-Frame(a, width=700, height=900, bg='#FFA800').place(x = 0, y = 290)
-Frame(a, width=150,height=150, bg='blue').place(x = 280, y = 170)
+Frame(a, width=700, height=280, bg='#007EA3').place(x = 0, y = 0)
+# Frame(a, width=700, height=900, bg='#FFA800').place(x = 0, y = 290)
+# Frame(a, width=150,height=150, bg='blue').place(x = 280, y = 170)
+
+staff_id = Label(a, text='Staff Account',
+                 font=('Ariel', 40),
+                 fg= '#F0F4F7',
+                 bg='#007EA3')
+staff_id.place(x = 170, y = 100)
 
 
 id_no = Label(a, text="Id no",
               font=("Calibri",25),
-              bg='#FFA800')
-id_no.place(x = 250, y = 340)
+              bg='#F0F4F7')
+id_no.place(x = 100, y = 340)
 name_of_staff = Label(a, text="Name of Staff ",
               font=("Calibri",25),
-              bg='#FFA800')
-name_of_staff.place(x = 250, y = 400)
+              bg='#F0F4F7')
+name_of_staff.place(x = 100, y = 400)
 email = Label(a, text="Email",
               font=("Calibri",25),
-              bg='#FFA800')
-email.place(x = 250, y = 460)
+              bg='#F0F4F7')
+email.place(x = 100, y = 460)
 contact = Label(a, text="Contact",
               font=("Calibri",25),
-              bg='#FFA800')
-contact.place(x = 250, y = 520)
+              bg='#F0F4F7')
+contact.place(x = 100, y = 520)
 
 
 logout = Button(a, text='Log out',

@@ -2,7 +2,18 @@ from tkinter import *
 
 root=Tk()
 root.title("Records of tenants")
-root.geometry("1550x800+0+0")
+root.geometry("1600x950+0+0")
+root.config(bg="#F0F4F7")
+
+
+
+root.config(bg = '#F0F4F7')
+c = Canvas(root, height=1100, width = 700)
+bgimage = PhotoImage(file='img/viewflatbg.png')
+background_label = Label(root, image=bgimage)
+background_label.place(x=0, y=0, relwidth=1, relheight=1)
+c.pack()
+
 
 
 #function in commands onclikcing navigation buttons
