@@ -3,7 +3,7 @@ from tkinter import messagebox
 from tkinter import filedialog
 from PIL import ImageTk,Image
 a=Tk()
-a.iconbitmap("a.ico")
+a.iconbitmap("C:/Users/Dell/Desktop/files/G/Gharbeti/a.ico")
 a.title("GHARBETI - Home")
 screen_width = a.winfo_screenwidth()
 screen_height = a.winfo_screenheight()
@@ -11,7 +11,7 @@ a.geometry('1600x950')
 a.resizable(0,0)
 a.config(bg = '#F0F4F7')
 c = Canvas(a, height=1100, width = 700)
-bgimage = PhotoImage(file='img/homepic.png')
+bgimage = PhotoImage(file='C:/Users/Dell/Desktop/files/G/Gharbeti/img/homepic.png')
 background_label = Label(a, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
