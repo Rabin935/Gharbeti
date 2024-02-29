@@ -9,9 +9,9 @@ a.title("GHARBETI - Signup")
 a.geometry('1000x600')
 a.resizable(0,0)
 #connecting to the database
-conn=sqlite3.connect("tenants.db")
+conn=sqlite3.connect("staff.db")
 cursor=conn.cursor()
-cursor.execute("""CREATE TABLE IF NOT EXISTS tenant(
+cursor.execute("""CREATE TABLE IF NOT EXISTS st_records(
         ID INTEGER PRIMARY KEY AUTOINCREMENT,
         fname   TEXT,
         pw     TEXT,
@@ -23,11 +23,11 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS tenant(
 )""")
 conn.commit()
 
-a.iconbitmap("a.ico")
+a.iconbitmap("C:/Users/Dell/Desktop/files/G/Gharbeti/a.ico")
 
 
 c = Canvas(a, height=1100, width = 700)
-bgimage = PhotoImage(file='logo1.png')
+bgimage = PhotoImage(file='C:/Users/Dell/Desktop/files/G/Gharbeti/logo1.png')
 background_label = Label(a, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
@@ -53,18 +53,15 @@ def check():
         v4=phone_no.get()
         a.destroy()
         import forgetps
-        conn=sqlite3.connect("tenants.db")
-        c=conn.cursor()
-        c.execute("INSERT INTO tenant(fname,pw,em,co,a1,a2,a3) VALUES(?,?,?,?,?,?,?)",
-        (v1,v2,v3,v4,forgetps.ans1.get(),forgetps.ans2.get(),forgetps.ans3.get()))
+        conn=sqlite3.connect("staff.db")
+        cursor=conn.cursor()
+        cursor.execute("INSERT INTO st_records(fname,pw,em,co,a1,a2,a3) VALUES(?,?,?,?,?,?,?)",
+        (v1,v2,v3,v4,forgetps.v5,forgetps.v6,forgetps.v7))
         conn.commit()
         conn.close()
-        fullname.delete(0,END)
-        password1.delete(0,END)
-        email.delete(0,END)
-        phone_no.delete(0,END)
         a.destroy()
         import home
+        
         
       
       
