@@ -3,7 +3,7 @@ from tkinter import messagebox
 from tkinter import filedialog
 from PIL import ImageTk,Image
 a=Tk()
-a.iconbitmap("C:/Users/Dell/Desktop/files/G/Gharbeti/a.ico")
+a.iconbitmap("a.ico")
 a.title("GHARBETI - Home")
 screen_width = a.winfo_screenwidth()
 screen_height = a.winfo_screenheight()
@@ -11,7 +11,7 @@ a.geometry('1300x650')
 a.resizable(0,0)
 a.config(bg = '#F0F4F7')
 c = Canvas(a, height=1100, width = 700)
-bgimage = PhotoImage(file='C:/Users/Dell/Desktop/files/G/Gharbeti/img/homepic.png')
+bgimage = PhotoImage(file='img/homepageimg.png')
 background_label = Label(a, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
@@ -24,22 +24,16 @@ def home():
 def vflat():
     a.destroy()
     import viewflats
-def tenant():
-    a.destroy()
-    import ant
-def aap():
-    a.destroy()
-    import aap
 def myacc():
     # a.destroy()
     import myacc
 
 
 slogan = Label(a, text='Better finds for you',
-               font=('Calibri bold', 35),
+               font=('Calibri bold', 25),
                fg='#007EA3',
                bg='#F0F4F7')
-slogan.place(x = 175, y = 222)
+slogan.place(x = 195, y = 245)
 home=Button(a,text="Home",
                font=("Calibri",26),
                bg = '#F0F4F7',
@@ -74,9 +68,9 @@ account_button.place(x=360,y=50)
 Frame(a, width=150,height=2, bg = '#007EA3').place(x = 368, y = 103)
 
 welcome = Label(a, text= 'Welcome to our Apartment',
-                font=('arial bold', 40),
+                font=('arial bold', 30),
                 fg='#007EA3')
-welcome.place(x = 800, y = 400)
+welcome.place(x = 700, y = 240)
 
 description = Label(a, text='''Gharbeti is a user-friendly application designed to help staff members 
         become more familiar with tenant information. To ensure security, 
@@ -84,8 +78,8 @@ description = Label(a, text='''Gharbeti is a user-friendly application designed 
         Each staff member is assigned a unique ID number, which is required 
         to log into the app. Gharbeti is designed to be simple and intuitive, 
         allowing for seamless staff interaction.''',
-                    font=('Arial', 18))
-description.place(x = 730, y = 480)
+                    font=('Arial', 15))
+description.place(x = 600, y = 300)
 
 
 
