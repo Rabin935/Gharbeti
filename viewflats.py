@@ -2,14 +2,14 @@ from tkinter import *
 
 root=Tk()
 root.title("Records of tenants")
-root.geometry("1600x950+0+0")
+root.geometry("1300x650+0+0")
 root.config(bg="#F0F4F7")
 
 
 
 root.config(bg = '#F0F4F7')
 c = Canvas(root, height=1100, width = 700)
-bgimage = PhotoImage(file='img/viewflatbg.png')
+bgimage = PhotoImage(file='img/viewflatimg.png')
 background_label = Label(root, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
@@ -26,6 +26,9 @@ def home():
 def vflat():
     root.destroy()
     import viewflats
+def myacc():
+    # a.destroy()
+    import myacc
 
 #placing buttons to navigate through the program
 home=Button(root,text="Home",
@@ -67,6 +70,16 @@ flat_button=Button(root, text="Tenants",
                 cursor='hand2')
 flat_button.place(x=50,y=200)
 Frame(root, width=153,height=2, bg = '#007EA3').place(x = 180, y = 103)
+
+account_button=Button(root, text="My profile",
+                   font=("Calibri",26),
+                   fg='#007EA3',
+                   bg='#F0F4F7',
+                   border=0,
+                   cursor='hand2',
+                   command=myacc)
+account_button.place(x=360,y=50)
+Frame(root, width=150,height=2, bg = '#007EA3').place(x = 368, y = 103)
 
 
         
