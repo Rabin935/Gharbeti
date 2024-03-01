@@ -1,10 +1,10 @@
 from tkinter import *
 from tkinter import messagebox
 from PIL import ImageTk,Image
+import sqlite3
+
 a=Tk()
 a.title("GHARBETI") 
-screen_width = a.winfo_screenwidth()
-screen_height = a.winfo_screenheight()
 a.geometry('1000x600')
 a.resizable(0,0)
 c = Canvas(a, height=1100, width = 700)
@@ -13,11 +13,19 @@ background_label = Label(a, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
 a.iconbitmap("a.ico")
+
+conn=sqlite3.connect("staff.db")
+cursor=conn.cursor()
+
 def home():
-    k=id_no.get()
-    p=password.get()
-    if k.isdigit() and len(p)>8:
-        messagebox.showinfo("success","logged in successfully.")
+    conn=sqlite3.connect("staff.db")
+    cursor=conn.cursor()
+    global k
+    k = id_no.get()
+    p = password.get()
+    cursor.execute("SELECT * FROM st_records WHERE fname=? AND pw=?", (k, p))
+    record = cursor.fetchone()
+    if record:
         a.destroy()
         import home
     else:
@@ -35,6 +43,11 @@ def signup():
     a.destroy()
     import Signuppage   
 
+def forget():
+    a.destroy()
+    import pwreset
+
+
 frame = Frame(a, width= '400', height='500',
               bg= '#F0F4F7') 
 frame.place(x = 560, y = 50)
@@ -45,7 +58,6 @@ l=Label(a,text="Sign In",
         bg = "#F0F4F7")
 l.place(x=690,y=100)
 
-#username insert in entry box for username
 def on_enter(e):
     id_no.delete(0, 'end')
     
@@ -64,10 +76,8 @@ id_no.insert(0, 'Username')
 id_no.bind('<FocusIn>', on_enter)
 id_no.bind('<FocusOut>', on_leave)
 
-#frame for username
 Frame(a, width=300,bg = '#007EA3').place(x = 600, y = 250)
 
-#password insert in entry box for password
 def on_enter(e):
     password.delete(0, 'end')
     
@@ -86,7 +96,6 @@ password.insert(0, 'Password')
 password.bind('<FocusIn>', on_enter)
 password.bind('<FocusOut>', on_leave)
 
-#frame for password
 Frame(a, width=300,bg = '#007EA3').place(x = 600, y = 310)
 
 #for checkbutton of show password 
@@ -111,7 +120,8 @@ forget=Button(text="Forgot password?",
               fg= 'blue',
               cursor='hand2',
               border=0,
-              bg= '#F0F4F7').place(x=794,y=425)
+              bg= '#F0F4F7',
+              command=forget).place(x=794,y=425)
 Label(a,text="Don't have an account?",
       font=("Calibri",10),
       bg = "#F0F4F7").place(x=650,y=468)

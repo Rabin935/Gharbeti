@@ -9,17 +9,17 @@ a.title("GHARBETI - Signup")
 a.geometry('1000x600')
 a.resizable(0,0)
 #connecting to the database
-conn=sqlite3.connect("tenants.db")
+conn=sqlite3.connect("staff.db")
 cursor=conn.cursor()
-cursor.execute("""CREATE TABLE IF NOT EXISTS tenant(
+cursor.execute("""CREATE TABLE IF NOT EXISTS st_records(
         ID INTEGER PRIMARY KEY AUTOINCREMENT,
-        fname   TEXT,
-        pw     TEXT,
-        em     TEXT,
+        fname   VARCHAR(40),
+        pw     VARCHAR(40),
+        em     VARCHAR(40),
         co     INT,
-        a1     TEXT,
-        a2     TEXT,
-        a3     TEXT 
+        a1     VARCHAR(40),
+        a2     VARCHAR(40),
+        a3     VARCHAR(40) 
 )""")
 conn.commit()
 
@@ -31,7 +31,7 @@ bgimage = PhotoImage(file='logo1.png')
 background_label = Label(a, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
-global flag
+
 def check():
     flag=0
     if len((password1.get()))<8:
@@ -40,7 +40,7 @@ def check():
         if bool((email.get().endswith("@gmail.com")))==False:
             flag+=1
             messagebox.showwarning("error","Error in email")
-            if bool((phone_no.get()).isdigit)==False or len((phone_no.get()))<10:
+            if bool((phone_no.get()).isdigit())==False or len((phone_no.get()))<10:
                 flag+=1
                 messagebox.showwarning("error","Error in phone number")
     if flag>=1:
@@ -53,26 +53,18 @@ def check():
         v4=phone_no.get()
         a.destroy()
         import forgetps
-        conn=sqlite3.connect("tenants.db")
-        c=conn.cursor()
-        c.execute("INSERT INTO tenant(fname,pw,em,co,a1,a2,a3) VALUES(?,?,?,?,?,?,?)",
-        (v1,v2,v3,v4,forgetps.ans1.get(),forgetps.ans2.get(),forgetps.ans3.get()))
+        cursor.execute("INSERT INTO st_records(fname,pw,em,co,a1,a2,a3) VALUES(?,?,?,?,?,?,?)",
+        (v1,v2,v3,v4,forgetps.v5,forgetps.v6,forgetps.v7))
         conn.commit()
         conn.close()
-        fullname.delete(0,END)
-        password1.delete(0,END)
-        email.delete(0,END)
-        phone_no.delete(0,END)
-        a.destroy()
         import home
+        
         
       
       
-
-
 def signup():
+    a.destroy()
     import gblogin
-    a.destroy
     
 
 global fullname
@@ -160,20 +152,21 @@ email.bind('<FocusOut>', on_leave)
 Frame(a, width=270,bg = '#007EA3').place(x = 650, y = 255)
 
 def on_enter(e):
-    phone_no.delete(0, 'end')
+    if phone_no.get() == 'Enter your phone no':
+        phone_no.delete(0, 'end')
     
 def on_leave(e):
-    name = phone_no.get()
-    if name == '':
-        phone_no.insert(0, 'Enter your Phone no')
+    if phone_no.get() == '':
+        phone_no.insert(0, 'Enter your phone no')
 
-phone_no=Entry(a,width=32,
+phone_no=Entry(a,width=32, 
          font=("Calibri",11),
          fg = '#007EA3',
          bg = '#F0F4F7',
          border=0)
 phone_no.place(x=650,y=280, height=30)
 phone_no.insert(0, 'Enter your phone no')
+
 phone_no.bind('<FocusIn>', on_enter)
 phone_no.bind('<FocusOut>', on_leave)
 
@@ -183,28 +176,18 @@ Frame(a, width=270,bg = '#007EA3').place(x = 650, y = 305)
 c1=IntVar()
 c2=IntVar()
 c3=IntVar()
-gn1 = Checkbutton(a, text = 'Female',
-                  variable=c1,
-                  fg="#007EA3",
-                  bg= '#C0C9D1')
 gn1 = Radiobutton(a, text = 'Female',
                   variable=c1,
                   fg="#007EA3",
                   bg= '#F0F4F7',value=1)
 gn1.place(x = 650, y = 335)
-gn2 = Checkbutton(a, text = 'Male',
-                  fg="#007EA3",
-                  variable=c2,
-                  bg="#C0C9D1")
+
 gn2 = Radiobutton(a, text = 'Male',
                   variable=c1,
                   fg="#007EA3",
                   bg="#F0F4F7",value=2)
 gn2.place(x = 720, y = 335)
-gn3 = Checkbutton(a, text = 'Others',
-                  variable=c3,
-                  fg="#007EA3",
-                  bg="#C0C9D1")
+
 gn3 = Radiobutton(a, text = 'Others',
                   variable=c1,
                   fg="#007EA3",

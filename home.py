@@ -55,6 +55,8 @@ flat_button.place(x=170,y=50)
 Frame(a, width=153,height=2, bg = '#007EA3').place(x = 180, y = 103)
 
 
+
+
 account_button=Button(a, text="My profile",
                    font=("Calibri",26),
                    fg='#007EA3',
@@ -72,7 +74,7 @@ welcome.place(x = 700, y = 240)
 
 description = Label(a, text='''Gharbeti is a user-friendly application designed to help staff members 
         become more familiar with tenant information. To ensure security, 
-        staff can only access the application with a password and ID number. 
+        staff can only access the application with a password and username. 
         Each staff member is assigned a unique ID number, which is required 
         to log into the app. Gharbeti is designed to be simple and intuitive, 
         allowing for seamless staff interaction.''',

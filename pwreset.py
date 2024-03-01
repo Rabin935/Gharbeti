@@ -1,6 +1,7 @@
 from tkinter import *
 import sqlite3
 from tkinter import ttk
+from tkinter import messagebox
 
 a = Tk()
 a.title("GHARBETI") 
@@ -15,7 +16,52 @@ def confirm():
         v6=ans2.get()
         v7=ans3.get()
         a.destroy()
-        import home
+        conn=sqlite3.connect("staff.db")
+        cursor=conn.cursor()
+        cursor.execute("SELECT * FROM st_records WHERE a1=? AND a2=? AND a3=?", (v5, v6, v7))
+        record = cursor.fetchone()
+        if record:
+            # Create a new window
+            new_window = Tk()
+            new_window.title("New Password")
+            new_window.geometry('300x200')
+            
+            # Label for New Password
+            new_password_label = Label(new_window, text="New Password:")
+            new_password_label.pack()
+            
+            # Entry for New Password
+            new_password_entry = Entry(new_window, show="*")
+            new_password_entry.pack()
+            
+            # Label for Confirm Password
+            confirm_password_label = Label(new_window, text="Confirm Password:")
+            confirm_password_label.pack()
+            
+            # Entry for Confirm Password
+            confirm_password_entry = Entry(new_window, show="*")
+            confirm_password_entry.pack()
+            
+            # Button to confirm
+            confirm_button = Button(new_window, text="Confirm", command=lambda: save_new_password(new_password_entry.get(), confirm_password_entry.get()))
+            confirm_button.pack()
+
+            # Function to save new password
+            def save_new_password(new_password, confirm_password):
+                if new_password == confirm_password:
+                    # Update the password in the database
+                    cursor.execute("UPDATE st_records SET pw=? WHERE a1=? AND a2=? AND a3=?", (new_password, v5, v6, v7))
+                    conn.commit()
+                    messagebox.showinfo("Success", "Password updated successfully!")
+                    new_window.destroy()
+                else:
+                    messagebox.showerror("Error", "Passwords do not match!")
+
+            new_window.mainloop()
+        else:
+            messagebox.showerror("Error", "Invalid security question answers!")
+                
+
     
 
 #frame for reset security question

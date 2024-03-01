@@ -18,8 +18,10 @@ c.pack()
 
 #function in commands onclikcing navigation buttons
 def func():
-    root.destroy
     import data 
+def func2():
+    import data2
+
 def home():
     root.destroy()
     import home
@@ -53,7 +55,7 @@ Frame(root, width=153,height=2, bg = '#007EA3').place(x = 180, y = 103)
 
 flat_button=Button(root, text="Rooms",
                 font=("Calibri",20),
-                command=func,
+                command=func2,
                 fg='#007EA3',
                 bg='#F0F4F7',
                 border=0,
