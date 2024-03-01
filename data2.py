@@ -83,7 +83,7 @@ def insert():
         status.delete(0,END)
         update_box.delete(0,END)
         display_data()
-        messagebox.showinfo("Updated","Tenant has been updated.")
+        messagebox.showinfo("Updated","rooms has been updated.")
 
 
 

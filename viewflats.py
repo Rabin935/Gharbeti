@@ -9,7 +9,7 @@ root.config(bg="#F0F4F7")
 
 root.config(bg = '#F0F4F7')
 c = Canvas(root, height=1100, width = 700)
-bgimage = PhotoImage(file='img/viewflatimg.png')
+bgimage = PhotoImage(file='C:/Users/Dell/Desktop/files/G/Gharbeti/img/viewflatimg.png')
 background_label = Label(root, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()

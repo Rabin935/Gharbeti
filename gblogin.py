@@ -1,23 +1,31 @@
 from tkinter import *
 from tkinter import messagebox
 from PIL import ImageTk,Image
+import sqlite3
+
 a=Tk()
 a.title("GHARBETI") 
-screen_width = a.winfo_screenwidth()
-screen_height = a.winfo_screenheight()
 a.geometry('1000x600')
 a.resizable(0,0)
 c = Canvas(a, height=1100, width = 700)
-bgimage = PhotoImage(file='logo1.png')
+bgimage = PhotoImage(file='C:/Users/Dell/Desktop/files/G/Gharbeti/logo1.png')
 background_label = Label(a, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
-a.iconbitmap("a.ico")
+a.iconbitmap("C:/Users/Dell/Desktop/files/G/Gharbeti/a.ico")
+
+conn=sqlite3.connect("staff.db")
+cursor=conn.cursor()
+
 def home():
-    k=id_no.get()
-    p=password.get()
-    if k.isdigit() and len(p)>8:
-        messagebox.showinfo("success","logged in successfully.")
+    conn=sqlite3.connect("staff.db")
+    cursor=conn.cursor()
+    global k
+    k = id_no.get()
+    p = password.get()
+    cursor.execute("SELECT * FROM st_records WHERE fname=? AND pw=?", (k, p))
+    record = cursor.fetchone()
+    if record:
         a.destroy()
         import home
     else:
@@ -34,6 +42,10 @@ def add():
 def signup():
     a.destroy()
     import Signuppage   
+
+def forget():
+    a.destroy()
+    import pwreset
 
 
 frame = Frame(a, width= '400', height='500',
@@ -108,7 +120,8 @@ forget=Button(text="Forgot password?",
               fg= 'blue',
               cursor='hand2',
               border=0,
-              bg= '#F0F4F7').place(x=794,y=425)
+              bg= '#F0F4F7',
+              command=forget).place(x=794,y=425)
 Label(a,text="Don't have an account?",
       font=("Calibri",10),
       bg = "#F0F4F7").place(x=650,y=468)
