@@ -35,7 +35,6 @@ def signup():
     a.destroy()
     import Signuppage   
 
-
 frame = Frame(a, width= '400', height='500',
               bg= '#F0F4F7') 
 frame.place(x = 560, y = 50)
@@ -46,6 +45,7 @@ l=Label(a,text="Sign In",
         bg = "#F0F4F7")
 l.place(x=690,y=100)
 
+#username insert in entry box for username
 def on_enter(e):
     id_no.delete(0, 'end')
     
@@ -64,8 +64,10 @@ id_no.insert(0, 'Username')
 id_no.bind('<FocusIn>', on_enter)
 id_no.bind('<FocusOut>', on_leave)
 
+#frame for username
 Frame(a, width=300,bg = '#007EA3').place(x = 600, y = 250)
 
+#password insert in entry box for password
 def on_enter(e):
     password.delete(0, 'end')
     
@@ -84,6 +86,7 @@ password.insert(0, 'Password')
 password.bind('<FocusIn>', on_enter)
 password.bind('<FocusOut>', on_leave)
 
+#frame for password
 Frame(a, width=300,bg = '#007EA3').place(x = 600, y = 310)
 
 #for checkbutton of show password 
