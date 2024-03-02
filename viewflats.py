@@ -6,10 +6,10 @@ root.geometry("1300x650+0+0")
 root.config(bg="#F0F4F7")
 
 
-
+#designing the window
 root.config(bg = '#F0F4F7')
 c = Canvas(root, height=1100, width = 700)
-bgimage = PhotoImage(file='img/viewflatimg.png')
+bgimage = PhotoImage(file='C:/Users/Dell/Desktop/files/G/Gharbeti/img/viewflatimg.png')
 background_label = Label(root, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
@@ -21,7 +21,6 @@ def func():
     import data 
 def func2():
     import data2
-
 def home():
     root.destroy()
     import home
@@ -42,6 +41,7 @@ home=Button(root,text="Home",
         command=home)
 home.place(x=50,y=50)
 Frame(root, width=88,height=2, bg = '#007EA3').place(x = 60, y = 103)
+
 
 flat_button=Button(root, text="View flats",
                 font=("Calibri",26),
@@ -83,6 +83,4 @@ account_button=Button(root, text="My profile",
 account_button.place(x=360,y=50)
 Frame(root, width=150,height=2, bg = '#007EA3').place(x = 368, y = 103)
 
-
-        
 root.mainloop()

@@ -17,6 +17,7 @@ cursor = conn.cursor()
 def login():
     a.destroy()
     import gblogin
+   
 
 def fetch_staff_details():
     staf_id = cid.get()

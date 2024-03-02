@@ -23,11 +23,11 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS st_records(
 )""")
 conn.commit()
 
-a.iconbitmap("a.ico")
+a.iconbitmap("C:/Users/Dell/Desktop/files/G/Gharbeti/a.ico")
 
 
 c = Canvas(a, height=1100, width = 700)
-bgimage = PhotoImage(file='logo1.png')
+bgimage = PhotoImage(file='C:/Users/Dell/Desktop/files/G/Gharbeti/logo1.png')
 background_label = Label(a, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
