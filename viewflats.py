@@ -23,7 +23,6 @@ def func():
     import data 
 def func2():
     import data2
-
 def home():
     root.destroy()
     import home
@@ -44,6 +43,7 @@ home=Button(root,text="Home",
         command=home)
 home.place(x=50,y=50)
 Frame(root, width=88,height=2, bg = '#007EA3').place(x = 60, y = 103)
+
 
 flat_button=Button(root, text="View flats",
                 font=("Calibri",26),
@@ -85,6 +85,4 @@ account_button=Button(root, text="My profile",
 account_button.place(x=360,y=50)
 Frame(root, width=150,height=2, bg = '#007EA3').place(x = 368, y = 103)
 
-
-        
 root.mainloop()

@@ -17,6 +17,7 @@ cursor = conn.cursor()
 def login():
     a.destroy()
     import gblogin
+   
 
 #connecting to the database
 def fetch_staff_details():
