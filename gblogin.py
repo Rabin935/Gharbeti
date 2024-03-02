@@ -19,6 +19,7 @@ a.iconbitmap("a.ico")
 conn=sqlite3.connect("staff.db")
 cursor=conn.cursor()
 
+#database for login page
 def home():
     conn=sqlite3.connect("staff.db")
     cursor=conn.cursor()
@@ -60,6 +61,7 @@ l=Label(a,text="Sign In",
         bg = "#F0F4F7")
 l.place(x=690,y=100)
 
+#To create entry box
 def on_enter(e):
     id_no.delete(0, 'end')
     
@@ -80,6 +82,7 @@ id_no.bind('<FocusOut>', on_leave)
 
 Frame(a, width=300,bg = '#007EA3').place(x = 600, y = 250)
 
+#To create entry box
 def on_enter(e):
     password.delete(0, 'end')
     
