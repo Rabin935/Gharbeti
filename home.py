@@ -1,7 +1,10 @@
+#To create tkinter module
 from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog
 from PIL import ImageTk,Image
+
+#To create an application window
 a=Tk()
 a.iconbitmap("C:/Users/Dell/Desktop/files/G/Gharbeti/a.ico")
 a.title("GHARBETI - Home")

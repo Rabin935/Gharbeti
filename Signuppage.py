@@ -1,13 +1,17 @@
+#To create tkinter module
 from tkinter import *
 from tkinter import PhotoImage
 from PIL import Image, ImageTk
 from tkinter import messagebox
 import sqlite3
 
+#To create an application window
 a = Tk()
 a.title("GHARBETI - Signup")
-a.geometry('1000x600')
+a.attributes('1000x600')
 a.resizable(0,0)
+a.iconbitmap("a.ico")
+
 #connecting to the database
 conn=sqlite3.connect("staff.db")
 cursor=conn.cursor()
@@ -26,6 +30,7 @@ conn.commit()
 a.iconbitmap("C:/Users/Dell/Desktop/files/G/Gharbeti/a.ico")
 
 
+#To add background image 
 c = Canvas(a, height=1100, width = 700)
 bgimage = PhotoImage(file='C:/Users/Dell/Desktop/files/G/Gharbeti/logo1.png')
 background_label = Label(a, image=bgimage)
@@ -61,12 +66,12 @@ def check():
         
         
       
-      
+#function in commands onclikcing navigation buttons
 def signup():
     a.destroy()
     import gblogin
     
-
+#setting function variables as global 
 global fullname
 global password1
 global email
