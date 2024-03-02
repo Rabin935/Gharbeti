@@ -10,7 +10,7 @@ a.title("GHARBETI - My profile")
 a.geometry("450x650")
 a.resizable(0,0)
 a.config(bg='#F0F4F7')
-
+a.iconbitmap("a.ico")
 conn = sqlite3.connect("staff.db")
 cursor = conn.cursor()
 

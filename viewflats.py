@@ -9,10 +9,11 @@ root.config(bg="#F0F4F7")
 
 root.config(bg = '#F0F4F7')
 c = Canvas(root, height=1100, width = 700)
-bgimage = PhotoImage(file='img/viewflatimg.png')
+bgimage = PhotoImage(file='img/background.png')
 background_label = Label(root, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
+root.iconbitmap("a.ico")
 
 
 
@@ -57,20 +58,20 @@ flat_button=Button(root, text="Rooms",
                 font=("Calibri",20),
                 command=func2,
                 fg='#007EA3',
-                bg='#F0F4F7',
+                bg='#DDEEF7',
                 border=0,
                 cursor='hand2')
-flat_button.place(x=50,y=150)
+flat_button.place(x=50,y=180)
 Frame(root, width=153,height=2, bg = '#007EA3').place(x = 180, y = 103)
 
 flat_button=Button(root, text="Tenants",
                 font=("Calibri",20),
                 command=func,
                 fg='#007EA3',
-                bg='#F0F4F7',
+                bg='#DDEEF7',
                 border=0,
                 cursor='hand2')
-flat_button.place(x=50,y=200)
+flat_button.place(x=50,y=230)
 Frame(root, width=153,height=2, bg = '#007EA3').place(x = 180, y = 103)
 
 account_button=Button(root, text="My profile",

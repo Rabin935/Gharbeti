@@ -7,6 +7,7 @@ root.title("Gharbeti - Records of tenants")
 root.geometry("1090x480+180+150")
 root.config(bg='#007EA3')
 root.resizable(0,0)
+root.iconbitmap("a.ico")
 #connecting to database
 conn=sqlite3.connect("staff.db")
 cursor=conn.cursor()
