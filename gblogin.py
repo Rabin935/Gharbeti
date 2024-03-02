@@ -1,8 +1,10 @@
+#To create tkinter module
 from tkinter import *
 from tkinter import messagebox
 from PIL import ImageTk,Image
 import sqlite3
 
+#To create an application window
 a=Tk()
 a.title("GHARBETI") 
 a.geometry('1000x600')

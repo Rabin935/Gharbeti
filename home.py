@@ -1,7 +1,10 @@
+#To create tkinter module
 from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog
 from PIL import ImageTk,Image
+
+#To create an application window
 a=Tk()
 a.iconbitmap("a.ico")
 a.title("GHARBETI - Home")
@@ -25,7 +28,7 @@ def vflat():
     a.destroy()
     import viewflats
 def myacc():
-    # a.destroy()
+    a.destroy()
     import myacc
 
 

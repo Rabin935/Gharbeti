@@ -1,7 +1,10 @@
+#To create tkinter module
 from tkinter import *
 import sqlite3
 from tkinter import messagebox
 from tkinter import ttk
+
+#To create an application window
 root=Tk()
 root.title("Gharbeti - Records of tenants")
 root.geometry("1090x480+180+150")
@@ -24,12 +27,14 @@ conn.commit()
 
 font1=("Arial Italic",14)
 font2=("Arial",10)
+
+
 #setting function variables as global 
 global add
 global update
 global delete
 
-
+#database
 def add():
     conn=sqlite3.connect("staff.db")
     c=conn.cursor()
@@ -65,8 +70,6 @@ def delete():
 def insert():
     if(username.get()=="" or email.get()=="" or  contact.get()=="" or pms.get()=="" or rn.get()=="" ):
         messagebox.showerror("error","Please Enter All The Data.") 
-    # elif(not(username.get()).isalpha and (email.get()).endswith("@gmail.com") and (len(str(contact.get())))>10 and ((pms.get()).upper=="PAID" or (pms.get()).upper=="UNPAID") and (type(rn.get())==int) ):
-    #     messagebox.showerror("Error","Invalid Details") 
     else:
         conn=sqlite3.connect("staff.db")
         c=conn.cursor()
@@ -124,6 +127,7 @@ def get_data(event):
     pms.insert(0,row[4])
     rn.insert(0,row[5])
 
+#To create labels and entry in window
 label_username=Label(root,text="Name",font=font1,
                      bg='#007EA3')
 label_username.place(x=0,y=90)

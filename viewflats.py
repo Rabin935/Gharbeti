@@ -1,3 +1,4 @@
+#To create tkinter module
 from tkinter import *
 
 root=Tk()
@@ -6,7 +7,7 @@ root.geometry("1300x650+0+0")
 root.config(bg="#F0F4F7")
 
 
-
+#To create an application window
 root.config(bg = '#F0F4F7')
 c = Canvas(root, height=1100, width = 700)
 bgimage = PhotoImage(file='img/background.png')

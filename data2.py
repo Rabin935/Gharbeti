@@ -1,7 +1,10 @@
+#To create tkinter module
 from tkinter import *
 import sqlite3
 from tkinter import messagebox
 from tkinter import ttk
+
+#To create an application window
 root=Tk()
 root.title("Gharbeti - Records of rooms")
 root.geometry("1090x480+180+150")
@@ -121,6 +124,7 @@ def get_data(event):
     rate.insert(0,row[3])
     status.insert(0,row[4])
 
+#To create labels and entry in window
 label_floorno=Label(root,text="Floor no",font=font1,
                     bg='#007EA3')
 label_floorno.place(x=0,y=90)
