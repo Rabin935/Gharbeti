@@ -34,7 +34,7 @@ global add
 global update
 global delete
 
-#database
+#database for rooms
 def add():
     conn=sqlite3.connect("staff.db")
     c=conn.cursor()

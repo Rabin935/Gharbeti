@@ -8,7 +8,7 @@ import sqlite3
 #To create an application window
 a = Tk()
 a.title("GHARBETI - Signup")
-a.attributes('1000x600')
+a.geometry('1000x600')
 a.resizable(0,0)
 a.iconbitmap("a.ico")
 
