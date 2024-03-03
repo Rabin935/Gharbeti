@@ -33,6 +33,8 @@ def fetch_staff_details():
         messagebox.showerror("Error", "Staff details not found!")
 
 
+
+
 cid=Entry(a,text="enter id")
 cid.place(x=40,y=400)
 fetch_button = Button(a, text="Fetch Staff Details", command=fetch_staff_details)

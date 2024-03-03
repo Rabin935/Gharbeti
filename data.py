@@ -64,8 +64,6 @@ def delete():
 def insert():
     if(username.get()=="" or email.get()=="" or  contact.get()=="" or pms.get()=="" or rn.get()=="" ):
         messagebox.showerror("error","Please Enter All The Data.") 
-    # elif(not(username.get()).isalpha and (email.get()).endswith("@gmail.com") and (len(str(contact.get())))>10 and ((pms.get()).upper=="PAID" or (pms.get()).upper=="UNPAID") and (type(rn.get())==int) ):
-    #     messagebox.showerror("Error","Invalid Details") 
     else:
         conn=sqlite3.connect("staff.db")
         c=conn.cursor()

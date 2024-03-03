@@ -62,7 +62,6 @@ def delete():
 def insert():
     if(floorno.get()=="" or roomno.get()=="" or  rate.get()=="" or status.get()=="" ):
         messagebox.showerror("error","Please Enter All The Data.") 
-    
     else:
         conn=sqlite3.connect("staff.db")
         c=conn.cursor()
