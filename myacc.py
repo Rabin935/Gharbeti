@@ -5,8 +5,6 @@ from tkinter import PhotoImage
 import sqlite3
 
 
-
-
 a=Tk()
 # a.iconbitmap("a.ico")
 a.title("GHARBETI - My profile")
