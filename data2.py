@@ -24,6 +24,10 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS rooms(
 conn.commit()
 
 
+
+
+
+
 font1=("Arial Italic",14)
 font2=("Arial",10)
 #setting function variables as global 
@@ -66,8 +70,6 @@ def delete():
 def insert():
     if(floorno.get()=="" or roomno.get()=="" or  rate.get()=="" or status.get()=="" ):
         messagebox.showerror("error","Please Enter All The Data.") 
-    # elif(not(username.get()).isalpha and (email.get()).endswith("@gmail.com") and (len(str(contact.get())))>10 and ((pms.get()).upper=="PAID" or (pms.get()).upper=="UNPAID") and (type(rn.get())==int) ):
-    #     messagebox.showerror("Error","Invalid Details") 
     else:
         conn=sqlite3.connect("staff.db")
         c=conn.cursor()

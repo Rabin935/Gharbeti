@@ -3,7 +3,6 @@ from tkinter import *
 from tkinter import messagebox
 import sqlite3
 
-#To create an application window
 a=Tk()
 a.title("GHARBETI - My profile")
 a.geometry("450x650")
@@ -33,6 +32,8 @@ def fetch_staff_details():
         contact.config(text=f"Contact: {staff_details[4]}")
     else:
         messagebox.showerror("Error", "Staff details not found!")
+
+
 
 
 cid=Entry(a,text="enter id")
