@@ -4,6 +4,7 @@ import sqlite3
 from tkinter import ttk
 
 
+
 #To create an application window
 a = Tk()
 a.title("GHARBETI") 
