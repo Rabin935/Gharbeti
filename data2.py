@@ -20,6 +20,10 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS rooms(
 conn.commit()
 
 
+
+
+
+
 font1=("Arial Italic",14)
 font2=("Arial",10)
 #setting function variables as global 
