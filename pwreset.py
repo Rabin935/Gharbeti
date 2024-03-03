@@ -4,6 +4,8 @@ import sqlite3
 from tkinter import ttk
 from tkinter import messagebox
 
+
+
 #To create an application window
 a = Tk()
 a.title("GHARBETI") 
@@ -11,7 +13,7 @@ a.geometry('450x600')
 a.resizable(0,0)
 conn=sqlite3.connect("staff.db")
 cursor=conn.cursor()
-a.iconbitmap("a.ico")
+a.iconbitmap("C:/Users/ACER/OneDrive/Desktop/New folder/New folder/project/Gharbeti/a.ico")
 
 #placing buttons to navigate through the program
 def confirm():
@@ -139,7 +141,6 @@ confirm = Button(a, text='Confirm',
                  fg='#F0F4F7',
                  command=confirm)
 confirm.place(x = 150, y = 470)
-
 
 
 

@@ -10,7 +10,6 @@ a = Tk()
 a.title("GHARBETI - Signup")
 a.geometry('1000x600')
 a.resizable(0,0)
-a.iconbitmap("a.ico")
 
 #connecting to the database
 conn=sqlite3.connect("staff.db")
@@ -27,12 +26,12 @@ cursor.execute("""CREATE TABLE IF NOT EXISTS st_records(
 )""")
 conn.commit()
 
-a.iconbitmap("C:/Users/Dell/Desktop/files/G/Gharbeti/a.ico")
+a.iconbitmap("C:/Users/ACER/OneDrive/Desktop/New folder/New folder/project/Gharbeti/a.ico")
 
 
 #To add background image 
 c = Canvas(a, height=1100, width = 700)
-bgimage = PhotoImage(file='C:/Users/Dell/Desktop/files/G/Gharbeti/logo1.png')
+bgimage = PhotoImage(file=r'C:\Users\ACER\OneDrive\Desktop\New folder\New folder\project\Gharbeti\logo1.png')
 background_label = Label(a, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()

@@ -10,11 +10,13 @@ root.config(bg="#F0F4F7")
 #To create an application window
 root.config(bg = '#F0F4F7')
 c = Canvas(root, height=1100, width = 700)
-bgimage = PhotoImage(file='img/background.png')
+bgimage = PhotoImage(file=r'C:\Users\ACER\OneDrive\Desktop\New folder\New folder\project\Gharbeti\img\background.png')
 background_label = Label(root, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
-root.iconbitmap("a.ico")
+root.iconbitmap("C:/Users/ACER/OneDrive/Desktop/New folder/New folder/project/Gharbeti/a.ico")
+
+
 
 
 

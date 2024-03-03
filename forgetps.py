@@ -11,7 +11,7 @@ a.geometry('450x600')
 a.resizable(0,0)
 conn=sqlite3.connect("staff.db")
 cursor=conn.cursor()
-a.iconbitmap("a.ico")
+a.iconbitmap("C:/Users/ACER/OneDrive/Desktop/New folder/New folder/project/Gharbeti/a.ico")
 
 def confirm():
         global v5,v6,v7

@@ -6,7 +6,7 @@ from PIL import ImageTk,Image
 
 #To create an application window
 a=Tk()
-a.iconbitmap("C:/Users/Dell/Desktop/files/G/Gharbeti/a.ico")
+a.iconbitmap("C:/Users/ACER/OneDrive/Desktop/New folder/New folder/project/Gharbeti/a.ico")
 a.title("GHARBETI - Home")
 screen_width = a.winfo_screenwidth()
 screen_height = a.winfo_screenheight()
@@ -14,7 +14,7 @@ a.geometry('1300x650')
 a.resizable(0,0)
 a.config(bg = '#F0F4F7')
 c = Canvas(a, height=1100, width = 700)
-bgimage = PhotoImage(file='C:/Users/Dell/Desktop/files/G/Gharbeti/img/homepageimg.png')
+bgimage = PhotoImage(file='C:/Users/ACER/OneDrive/Desktop/New folder/New folder/project/Gharbeti/img/homepageimg.png')
 background_label = Label(a, image=bgimage)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 c.pack()
