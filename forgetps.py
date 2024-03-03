@@ -1,13 +1,17 @@
+#To create tkinter module
 from tkinter import *
 import sqlite3
 from tkinter import ttk
 
+
+#To create an application window
 a = Tk()
 a.title("GHARBETI") 
 a.geometry('450x600')
 a.resizable(0,0)
 conn=sqlite3.connect("staff.db")
 cursor=conn.cursor()
+a.iconbitmap("a.ico")
 
 def confirm():
         global v5,v6,v7
